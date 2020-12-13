@@ -1,0 +1,52 @@
+ body{
+    /* background-image: url('../src/cool-background.png'); */
+    background-size: cover;
+    background:linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('../src/cool-background.png');
+} 
+
+.button{
+    padding: 5px;
+    margin: 10px;
+    width: 20%;
+    border-radius: 5px;
+    border:1px solid black;
+    word-wrap: break-word;
+}
+
+.button-enabled{
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    margin: 10px;
+    width: 20%;
+    border-radius: 5px;
+    border:1px solid black;
+}
+
+.show{
+    display: inline;
+    padding: 5px;
+    border: 0px solid gray;
+}
+
+.input-field{
+    border:1px solid black;
+    border-radius: 5px;
+    width: 30%;
+    height:30px;
+    font-Size:20px;
+    padding: 8px;
+    text-align: center;
+}
+
+.main{
+    border:3px solid rgba(100,100,100);
+    width:40%;
+    margin:auto;
+    background-color: rgb(150,150,150,0.6);
+}
+
+.item{
+    background-color: rgb(150,150,150,0.7);
+    color:black;
+}

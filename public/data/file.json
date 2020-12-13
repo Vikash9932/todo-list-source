@@ -1,0 +1,33 @@
+[
+    {
+            
+        "id": 1,
+        "item": "Learn Todo List",
+        "isCompleted": true
+    },
+    {
+        "id":2,
+        "item": "Setup Github profile",
+        "isCompleted": false
+    },
+    {
+        "id":3,
+        "item": "Something 101",
+        "isCompleted": false
+    },
+    {
+        "id":4,
+        "item": "Something Else 102",
+        "isCompleted": false
+    },
+    {
+        "id":5,
+        "item": "Something Something",
+        "isCompleted": true
+    },
+    {
+        "id":6,
+        "item": "Something Something Something",
+        "isCompleted": true
+    }
+]
