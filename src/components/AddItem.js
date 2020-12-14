@@ -27,7 +27,7 @@ const AddItem = (props) =>{
             <button 
                 className = {enabledButton}
                 onClick = {clickButton}
-            >Add</button> 
+            >Add Item</button> 
             {console.log(enabledButton)}
         </div>
     )
