@@ -32,7 +32,7 @@ const  TodoList  = ({items, deleteData, toggleCompletion, completedClick, active
             <button type="submit" className = {enabledButton1} onClick =  {()=>{allClick()}}>All</button>
             <button type="submit" className = {enabledButton2} onClick = {()=>{activeClick()}}>Active</button>
             <button type="submit" className = {enabledButton3} onClick = {()=>{completedClick()}}>Completed</button>
-            <div className = "list-group container " >{listOfItems}</div>
+            <div>{listOfItems}</div>
         </React.Fragment>
     )
     

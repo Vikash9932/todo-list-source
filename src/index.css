@@ -10,7 +10,7 @@
     width: 20%;
     border-radius: 5px;
     border:1px solid black;
-    word-wrap: break-word;
+    word-wrap:none;
 }
 
 .button-enabled{
@@ -51,8 +51,39 @@
     color:black;
 }
 
-@media (max-width: 400px){
+.todoItem{
+    padding: 15px;
+    /* margin: 5px; */
+    background-color: rgb(150,150,150,0.7);
+    border: 1px solid gray;
+    width:100%;
+    color: black;
+}
+.each-item{
+    margin:0px;
+}
+.each-item:hover{
+    cursor: pointer;
+}
+
+.remove-button{
+    float:right;
+    padding:0px;
+    width: 20px; 
+    border: 1px solid red;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 800px){
     .main{
         width: 100%;
     }
+    .input-field{
+        /* display:block; */
+    }
+
 }
