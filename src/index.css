@@ -1,89 +1,89 @@
- body{
-    /* background-image: url('../src/cool-background.png'); */
-    background-size: cover;
-    background:linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('../src/cool-background.png');
-} 
-
-.button{
-    padding: 5px;
-    margin: 10px;
-    width: 20%;
-    border-radius: 5px;
-    border:1px solid black;
-    word-wrap:none;
+body {
+  /* background-image: url('../src/cool-background.png'); */
+  background-size: cover;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url("../src/cool-background.png");
 }
 
-.button-enabled{
-    background-color: blue;
-    color: white;
-    padding: 5px;
-    margin: 10px;
-    width: 20%;
-    border-radius: 5px;
-    border:1px solid black;
+.button {
+  padding: 5px;
+  margin: 10px;
+  width: 20%;
+  border-radius: 5px;
+  border: 1px solid black;
+  word-wrap: none;
 }
 
-.show{
-    display: inline;
-    padding: 5px;
-    border: 0px solid gray;
+.button-enabled {
+  background-color: blue;
+  color: white;
+  padding: 5px;
+  margin: 10px;
+  width: 20%;
+  border-radius: 5px;
+  border: 1px solid black;
 }
 
-.input-field{
-    border:1px solid black;
-    border-radius: 5px;
-    width: 30%;
-    height:30px;
-    font-Size:20px;
-    padding: 8px;
-    text-align: center;
+.show {
+  display: inline;
+  padding: 5px;
+  border: 0px solid gray;
 }
 
-.main{
-    border:3px solid rgba(100,100,100);
-    width:40%;
-    margin:auto;
-    background-color: rgb(150,150,150,0.6);
+.input-field {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 30%;
+  height: 30px;
+  font-size: 20px;
+  padding: 8px;
+  text-align: center;
 }
 
-.item{
-    background-color: rgb(150,150,150,0.7);
-    color:black;
+.main {
+  border: 3px solid rgba(100, 100, 100);
+  width: 40%;
+  margin: auto;
+  background-color: rgb(150, 150, 150, 0.6);
 }
 
-.todoItem{
-    padding: 15px;
-    /* margin: 5px; */
-    background-color: rgb(150,150,150,0.7);
-    border: 1px solid gray;
-    width:100%;
-    color: black;
-}
-.each-item{
-    margin:0px;
-}
-.each-item:hover{
-    cursor: pointer;
+.item {
+  background-color: rgb(150, 150, 150, 0.7);
+  color: black;
 }
 
-.remove-button{
-    float:right;
-    padding:0px;
-    width: 20px; 
-    border: 1px solid red;
-    border-radius: 50%;
-    background-color: red;
-    color: white;
-    text-align: center;
-    font-size: 20px;
+.todoItem {
+  padding: 15px;
+  /* margin: 5px; */
+  background-color: rgb(150, 150, 150, 0.7);
+  border: 1px solid gray;
+  width: 100%;
+  color: black;
+}
+.each-item {
+  margin: 0px;
+}
+.each-item:hover {
+  cursor: pointer;
 }
 
-@media screen and (max-width: 800px){
-    .main{
-        width: 100%;
-    }
-    .input-field{
-        /* display:block; */
-    }
+.remove-button {
+  float: right;
+  padding: 0px;
+  width: 20px;
+  border: 1px solid red;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
 
+@media screen and (max-width: 800px) {
+  .main {
+    width: 100%;
+  }
 }
