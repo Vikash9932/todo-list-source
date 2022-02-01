@@ -14,7 +14,7 @@ const TodoItem = ({ item, id, deleteData, isCompleted, toggleCompletion }) => {
     <div className="todoItem">
       <span
         className="each-item"
-        style={isCompleted ? { textDecoration: "line-through double" } : {}}
+        style={isCompleted ? { textDecoration: "line-through" } : {}}
         onClick={onTextClick}
       >
         {item}
