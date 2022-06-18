@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import { AiOutlineCloseCircle, AiOutlineSave } from 'react-icons/ai';
 import { FiEdit2 } from 'react-icons/fi'
+
 import { removeTodo, toggleCompletionTodo, updateTodo } from '../reducers';
 
 const TodoItem = ({ todo, removeTodo, toggleCompletion, updateTodo }) => {
@@ -34,7 +34,7 @@ const TodoItem = ({ todo, removeTodo, toggleCompletion, updateTodo }) => {
 
   return (
     <div className="todoItem">
-      {editMode ? <input onChange={handleChange} value={term} type="text" /> : <span
+      {editMode ? <input onChange={handleChange} value={term} type="text" className='each-item' /> : <span
         className="each-item"
         style={todo.isCompleted ? { textDecoration: 'line-through' } : {}}
         onClick={onTextClick}

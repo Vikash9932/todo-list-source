@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddItem from './AddItem';
 import TodoList from './TodoList';
+import FilterOptions from './FilterOptions'
 import data from '../assets/file.json';
 
 class App extends React.Component {
@@ -54,6 +55,7 @@ class App extends React.Component {
         <br />
         <span align="center">
           <AddItem />
+          <FilterOptions />
         </span>
         <TodoList />
       </div>

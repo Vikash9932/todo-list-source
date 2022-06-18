@@ -4,7 +4,6 @@ import { addTodo } from '../reducers'
 
 let enabledButton = 'button';
 const AddItem = (props) => {
-  console.log("props", props)
   const [term, setTerm] = useState('');
 
   const handleChange = e => {
@@ -53,7 +52,7 @@ const AddItem = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    todos: state,
+    todos: state.addReducer,
   }
 };
 

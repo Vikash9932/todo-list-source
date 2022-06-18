@@ -30,5 +30,21 @@ const addTodoReducer = createSlice({
   }
 })
 
+const initialFilter = 'all'
+
+const filterTodoReducer = createSlice({
+  name: 'filterTodos',
+  initialState: initialFilter,
+  reducers: {
+    //FilterTodo
+    filterTodo: (state, action) => {
+      if (action.payload) return action.payload
+      return state
+    }
+  }
+})
+
 export const { addTodo, removeTodo, toggleCompletionTodo, updateTodo } = addTodoReducer.actions
-export const reducer = addTodoReducer.reducer;
+export const { filterTodo } = filterTodoReducer.actions;
+export const addReducer = addTodoReducer.reducer;
+export const filterReducer = filterTodoReducer.reducer;

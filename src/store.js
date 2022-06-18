@@ -1,8 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { reducer } from './reducers'
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import { addReducer, filterReducer, } from './reducers'
 
 const store = configureStore({
-    reducer: reducer
+    reducer: combineReducers({
+        addReducer, filterReducer
+    })
 })
 
 export default store;
