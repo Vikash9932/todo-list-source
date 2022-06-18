@@ -1,7 +1,4 @@
-Deployed at : https://todo-list-source.vercel.app/
-
-
-
+### Deployed at : https://todo-lisst.herokuapp.com
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

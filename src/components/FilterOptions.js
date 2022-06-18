@@ -28,11 +28,6 @@ const FilterOptions = (props) => {
         enabledButton1 = "button"
     }
 
-    // const toggleClick = (val) =>{
-    //     props.filterTodo(val);
-
-    // }
-
     return (
         <div>
             <div className="show">Show: </div>
