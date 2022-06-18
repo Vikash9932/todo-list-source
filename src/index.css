@@ -5,7 +5,7 @@ body {
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0.3)
     ),
-    url("../src/cool-background.png");
+    url('./assets/cool-background.png');
 }
 
 .button {
@@ -45,7 +45,8 @@ body {
 
 .main {
   margin-top: 50px;
-  border: 3px solid rgb(95, 56, 56);
+  /* border: 3px solid rgb(95, 56, 56); */
+  border-radius: 20px;
   width: 40%;
   margin-left: auto;
   margin-right: auto;
@@ -65,24 +66,24 @@ body {
   width: 100%;
   color: black;
   user-select: none;
+  display: flex;
 }
 .each-item {
+  flex: 1;
   margin: 0px;
+  align-self: flex-start;
 }
 .each-item:hover {
   cursor: pointer;
 }
 
+.list-of-items :last-child {
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
 .remove-button {
-  float: right;
-  padding: 0px;
-  width: 20px;
-  border: 1px solid red;
-  border-radius: 50%;
-  background-color: red;
-  color: white;
-  text-align: center;
-  font-size: 20px;
+  align-self: flex-end;
 }
 
 @media screen and (max-width: 800px) {

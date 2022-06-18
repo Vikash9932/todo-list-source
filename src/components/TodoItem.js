@@ -1,5 +1,5 @@
-import React from "react";
-import "../index.css";
+import React from 'react';
+import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 const TodoItem = ({ item, id, deleteData, isCompleted, toggleCompletion }) => {
   const onButtonClick = () => {
@@ -14,15 +14,17 @@ const TodoItem = ({ item, id, deleteData, isCompleted, toggleCompletion }) => {
     <div className="todoItem">
       <span
         className="each-item"
-        style={isCompleted ? { textDecoration: "line-through" } : {}}
+        style={isCompleted ? { textDecoration: 'line-through' } : {}}
         onClick={onTextClick}
       >
         {item}
       </span>
 
-      <button className="remove-button" onClick={onButtonClick}>
-        x
-      </button>
+      <AiOutlineCloseCircle
+        className="remove-button"
+        onClick={onButtonClick}
+        size={25}
+      />
     </div>
   );
 };
