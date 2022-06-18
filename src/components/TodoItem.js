@@ -1,24 +1,54 @@
 import React from 'react';
-import { AiOutlineCloseCircle } from 'react-icons/ai';
+import { connect } from 'react-redux';
 
-const TodoItem = ({ item, id, deleteItem, isCompleted, toggleCompletion }) => {
+import { AiOutlineCloseCircle, AiOutlineSave } from 'react-icons/ai';
+import { FiEdit2 } from 'react-icons/fi'
+import { removeTodo, toggleCompletionTodo, updateTodo } from '../reducers';
+
+const TodoItem = ({ todo, removeTodo, toggleCompletion, updateTodo }) => {
+  const [editMode, setEditMode] = React.useState(false);
+  const [term, setTerm] = React.useState('')
+
   const onButtonClick = () => {
-    deleteItem(id);
+    removeTodo(todo.id);
   };
+
+  const handleChange = (e) => setTerm(e.target.value)
 
   const onTextClick = () => {
-    toggleCompletion(id);
+    toggleCompletion(todo.id);
   };
+
+  const editButton = () => {
+    setTerm(todo.item)
+    setEditMode(true)
+  }
+
+  const saveButton = () => {
+    updateTodo({
+      id: todo.id,
+      item: term,
+    })
+    setEditMode(false)
+  }
 
   return (
     <div className="todoItem">
-      <span
+      {editMode ? <input onChange={handleChange} value={term} type="text" /> : <span
         className="each-item"
-        style={isCompleted ? { textDecoration: 'line-through' } : {}}
+        style={todo.isCompleted ? { textDecoration: 'line-through' } : {}}
         onClick={onTextClick}
       >
-        {item}
-      </span>
+        {todo.item}
+      </span>}
+
+      {editMode ? <AiOutlineSave className='remove-button'
+        onClick={saveButton}
+        size={25} /> : <FiEdit2
+        className='edit-button'
+        onClick={editButton}
+        size={20}
+      />}
 
       <AiOutlineCloseCircle
         className="remove-button"
@@ -29,4 +59,12 @@ const TodoItem = ({ item, id, deleteItem, isCompleted, toggleCompletion }) => {
   );
 };
 
-export default TodoItem;
+const mapDispatchToProps = dispatch => {
+  return {
+    removeTodo: obj => dispatch(removeTodo(obj)),
+    toggleCompletion: obj => dispatch(toggleCompletionTodo(obj)),
+    updateTodo: obj => dispatch(updateTodo(obj))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(TodoItem);

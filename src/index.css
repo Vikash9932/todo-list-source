@@ -84,6 +84,12 @@ body {
 
 .remove-button {
   align-self: flex-end;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.edit-button {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 800px) {

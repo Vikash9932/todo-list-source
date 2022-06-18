@@ -21,9 +21,14 @@ const addTodoReducer = createSlice({
     //Toggle completion of todos
     toggleCompletionTodo: (state, action) => {
       state.map(item => { if (item.id === action.payload) item.isCompleted = !item.isCompleted; return item; })
+    },
+
+    //Update todos
+    updateTodo: (state, action) => {
+      state.map(item => { if (item.id === action.payload.id) item.item = action.payload.item; return item; })
     }
   }
 })
 
-export const { addTodo, removeTodo, toggleCompletionTodo } = addTodoReducer.actions
+export const { addTodo, removeTodo, toggleCompletionTodo, updateTodo } = addTodoReducer.actions
 export const reducer = addTodoReducer.reducer;
