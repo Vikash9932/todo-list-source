@@ -1,65 +1,29 @@
-// import { combineReducers } from 'redux';
-// import defaultList from '../assets/file.json';
-
-// const listReducer = (state = [...defaultList], action) => {
-//   switch (action.type) {
-//     case 'ADD_ITEM':
-//       console.log('inside list reduvcer', state);
-//       return {
-//         ...state,
-//         todoList: [
-//           ...state.todoList,
-//           {
-//             id: state.todoList[state.todoList.length - 1].id + 1,
-//             item: action.payload,
-//             isCompleted: false,
-//           },
-//         ],
-//       };
-//     default:
-//       return state;
-//   }
-// };
-
-// const filterListReducer = (state = [...defaultList], action) => {
-//   switch (action.type) {
-//     case 'FILTER_LIST':
-//       console.log('inside filter list reducer', state);
-//       const filteredList = state.filteredList.filter((item) => {
-//         if (action.payload === 'active') return item.isCompleted === false;
-//         else if (action.payload === 'completed') return item.isCompleted;
-//         return item;
-//       });
-//       return {
-//         todoList: [...filteredList],
-//       };
-//     default:
-//       return state;
-//   }
-// };
-
-// export default combineReducers({
-//   // todoList: todoListReducer,
-//   list: listReducer,
-//   filteredList: filterListReducer,
-// });
-
 import { createSlice } from '@reduxjs/toolkit'
+import data from '../assets/file.json'
 
-const initialState = []
+const initialState = [...data]
 
 const addTodoReducer = createSlice({
   name: 'todos',
   initialState,
   reducers: {
     //Adding todos
-    addTodos: (state, action) => {
+    addTodo: (state, action) => {
       state.push(action.payload)
       return state;
-    }
+    },
 
+    //Removing todos
+    removeTodo: (state, action) => {
+      return state.filter(item => item.id !== action.payload)
+    },
+
+    //Toggle completion of todos
+    toggleCompletionTodo: (state, action) => {
+      state.map(item => { if (item.id === action.payload) item.isCompleted = !item.isCompleted; return item; })
+    }
   }
 })
 
-export const { addTodos } = addTodoReducer.actions
+export const { addTodo, removeTodo, toggleCompletionTodo } = addTodoReducer.actions
 export const reducer = addTodoReducer.reducer;

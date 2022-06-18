@@ -1,9 +1,9 @@
 import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
-const TodoItem = ({ item, id, deleteData, isCompleted, toggleCompletion }) => {
+const TodoItem = ({ item, id, deleteItem, isCompleted, toggleCompletion }) => {
   const onButtonClick = () => {
-    deleteData(id);
+    deleteItem(id);
   };
 
   const onTextClick = () => {

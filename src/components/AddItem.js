@@ -1,32 +1,32 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addItem } from '../actions';
-import { addTodos } from '../reducers'
+import { addTodo } from '../reducers'
 
+let enabledButton = 'button';
 const AddItem = (props) => {
   console.log("props", props)
   const [term, setTerm] = useState('');
 
-  const handleChange = e => setTerm(e.target.value)
+  const handleChange = e => {
+    if (e.target.value !== "")
+      enabledButton = 'button-enabled';
+    else enabledButton = 'button'
+    setTerm(e.target.value)
+  }
 
-  let enabledButton = 'button';
 
   const handleAddButton = () => {
-    //   let id;
-    //   if (this.state.items.length) {
-    //     id = this.state.items[this.state.items.length - 1].id;
-    //     id += 1;
-    //   } else {
-    //     id = 1;
-    //   }
-    //   this.setState({
-    //     items: [...this.state.items, { id: id, item: term, isCompleted: false }],
-    //   });
-    enabledButton = 'button-enabled';
+    let id;
+    if (props.todos.length) {
+      id = props.todos[props.todos.length - 1].id;
+      id += 1;
+    } else {
+      id = 1;
+    }
     if (term === "") { }//Do nothing
     else {
       props.addTodo({
-        id: Math.floor(Math.random() * 1000),
+        id: id,
         item: term,
         completed: false,
       });
@@ -51,7 +51,6 @@ const AddItem = (props) => {
   );
 };
 
-// const mapDispatchToProps = () => {};
 const mapStateToProps = (state) => {
   return {
     todos: state,
@@ -60,7 +59,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addTodo: (obj) => dispatch(addTodos(obj))
+    addTodo: (obj) => dispatch(addTodo(obj))
   }
 }
 
